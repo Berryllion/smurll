@@ -1,0 +1,13 @@
+<?php
+  if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
+    $uri = 'https://';
+  } else {
+    $uri = 'http://';
+  }
+
+  $uri .= $_SERVER['HTTP_HOST'];
+  $redirect = 'home.php';
+
+  header('Location: ' . $uri . '/smurll/' . $redirect);
+  exit;
+?>

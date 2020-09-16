@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^s/([a-z0-9]{8})$ redirect.php [L,NC]
