@@ -28,7 +28,7 @@
       die("Error: Could not UPDATE data. <br>" . $connection->error);
    }
   } else {
-    echo 'This short URL does not exits.';
+    echo 'This short URL does not exist.';
   }
 
   $connection->close();

@@ -1,5 +1,5 @@
 <?php
-  $config=array(
+  $config = array(
     'host' => 'localhost',
     'username' => 'root',
     'password' => '',
