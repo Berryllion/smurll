@@ -1,2 +1,5 @@
 RewriteEngine on
-RewriteRule ^s/([a-z0-9]{8})$ redirect.php [L,NC]
+RewriteRule ^s/([a-z0-9]{8})$ redirect.php [NC]
+RewriteRule ^home$ home.php [NC]
+RewriteRule ^overview$ overview.php [NC]
+RewriteRule ^overview(\/[\d]*)?$ overview.php [NC]

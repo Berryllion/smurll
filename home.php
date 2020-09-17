@@ -4,6 +4,7 @@
     <title>Smurll</title>
   </head>
   <body>
+    <a href='overview'>Overview</a>
     <form method='post' name='form-url' id='form-url'>
       <label for='input-url'>Enter URL to shorten:</label>
       <input type='url' name='input-url' id='input-url' />
