@@ -14,14 +14,19 @@
 
   $exploded_url = explode("/", $_SERVER['REQUEST_URI']);
   $url_code = end($exploded_url);
-  $query = "SELECT org_url FROM urls WHERE url_code='" . $url_code . "'";
-  $result = $connection->query($query);
+  $select_query = "SELECT org_url FROM urls WHERE url_code='" . $url_code . "'";
+  $select_result = $connection->query($select_query);
 
-  if ($result->num_rows == 1) {
-    $row = $result->fetch_assoc();
+  if ($select_result->num_rows == 1) {
+    $row = $select_result->fetch_assoc();
     $org_url = $row['org_url'];
+    $update_query = "UPDATE urls SET nb_visited = nb_visited + 1 WHERE url_code='" . $url_code . "'";
 
-    header('Location: ' . $org_url);
+    if ($connection->query($update_query) === true) {
+      header('Location: ' . $org_url);
+    } else {
+      die("Error: Could not UPDATE data. <br>" . $connection->error);
+   }
   } else {
     echo 'This short URL does not exits.';
   }

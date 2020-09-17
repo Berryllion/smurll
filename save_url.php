@@ -22,7 +22,7 @@
   if ($connection->query($query) === true) {
     echo "URL saved.";
   } else {
-    die("Error: " . $query . "<br>" . $connection->error);
+    die("Error: Could not INSERT data. <br>" . $connection->error);
   }
 
   $connection->close();
